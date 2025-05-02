@@ -1,0 +1,5 @@
+John Doe
+Email: john.doe@example.com
+Skills: Python, FastAPI, React
+Experience: 5 years of software development
+Education: Bachelor's in Computer Science

@@ -1,20 +1,23 @@
 from datetime import timedelta
 from docx import Document
-from fastapi import FastAPI, File, HTTPException, UploadFile, Depends
+from fastapi import FastAPI, File, HTTPException, UploadFile, Depends, utils
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
+from database import get_db
 from models import JobDescription, Resume, SessionLocal, Base, User
-from schemas import JobDescriptionCreate, ResumeCreate, Token, UserCreate  # Ensure this import is present
+from schemas import JobDescriptionCreate, ResumeCreate, Token, UserCreate, UserProfile  # Ensure this import is present
 from crud import create_job_description, create_resume, get_all_resumes, get_job_description
-from utils import ACCESS_TOKEN_EXPIRE_MINUTES, compare_skills, create_access_token, extract_job_description_info, extract_resume_info, get_password_hash, match_resume_to_job, verify_password
+from utils import ACCESS_TOKEN_EXPIRE_MINUTES, compare_skills, create_access_token, extract_job_description_info, extract_resume_info, get_current_active_user, get_password_hash, match_resume_to_job, verify_password
 import os
 import PyPDF2
 from fastapi.middleware.cors import CORSMiddleware
 from models import User as UserModel, SessionLocal, Base
 from schemas import User as UserSchema, UserCreate
-
-
-# Initialize FastAPI app
+import schemas
+import models
+from fastapi import FastAPI, File, Form, UploadFile  # Ensure UploadFile is imported
+from typing import Optional
+from utils import get_current_active_user, get_current_user  # Make sure these are imported# Initialize FastAPI app
 app = FastAPI()
 
 # Enable CORS
@@ -169,9 +172,11 @@ def register_user(user_data: UserCreate, db: Session = Depends(get_db)):
     db.refresh(user)
     return user
 
-
-@app.post("/token", response_model=Token)
-async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
+@app.post("/login", response_model=Token)  # Change path to "/login"
+async def login_for_access_token(
+    form_data: OAuth2PasswordRequestForm = Depends(), 
+    db: Session = Depends(get_db)
+):
     user = db.query(UserModel).filter(UserModel.email == form_data.username).first()
     if not user or not verify_password(form_data.password, user.hashed_password):
         raise HTTPException(
@@ -182,6 +187,45 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
     
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
-        data={"sub": user.email, "role": user.role}, expires_delta=access_token_expires
+        data={"sub": user.email, "role": user.role}, 
+        expires_delta=access_token_expires
     )
-    return {"access_token": access_token, "token_type": "bearer"}
+    
+    # Return both token and role
+    return {
+        "access_token": access_token, 
+        "token_type": "bearer",
+        "role": user.role  # Explicitly include role
+    }
+
+
+
+@app.get("/users/me", response_model=schemas.UserProfile)
+async def read_users_me(
+    current_user: models.User = Depends(get_current_active_user)
+):
+    return current_user
+# In your main.py (backend)
+@app.put("/users/me", response_model=schemas.UserProfile)
+async def update_user_me(
+    profile_picture: UploadFile = File(None),
+    current_user: models.User = Depends(get_current_active_user),  # Fixed this line
+    db: Session = Depends(get_db)
+):
+    if profile_picture:
+        # Create uploads directory if it doesn't exist
+        os.makedirs("uploads/profile_pictures", exist_ok=True)
+        
+        # Generate unique filename
+        file_location = f"uploads/profile_pictures/user_{current_user.id}_{profile_picture.filename}"
+        
+        # Save file
+        with open(file_location, "wb") as buffer:
+            buffer.write(await profile_picture.read())
+        
+        # Update user in database
+        current_user.profile_picture = f"/{file_location}"
+        db.commit()
+        db.refresh(current_user)
+    
+    return current_user

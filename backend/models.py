@@ -51,10 +51,9 @@ class User(Base):
     hashed_password = Column(String)
     role = Column(String)  # "recruiter" or "applicant"
     is_active = Column(Boolean, default=True)
-
-    # Add job_descriptions relationship
+    profile_picture = Column(String)  # Add this line
+    
     job_descriptions = relationship("JobDescription", back_populates="user")
 
-    
 # Create tables
 Base.metadata.create_all(bind=engine)

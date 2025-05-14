@@ -1,20 +1,20 @@
-import React from 'react';
+// src/App.js
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Dashboard from './pages/Dashboard';
-import './styles/App.css';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import RecruiterDashboard from './pages/RecruiterDashboard';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
   return (
     <Router>
-      <div className="app">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/recruiter-dashboard" element={<RecruiterDashboard />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/" element={<LoginPage />} /> {/* Default to login */}
+      </Routes>
     </Router>
   );
 }

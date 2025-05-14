@@ -1,6 +1,7 @@
 from typing import Optional
-from pydantic import BaseModel
-
+from pydantic import BaseModel, EmailStr
+from fastapi import UploadFile 
+from datetime import datetime # Add this import
 class ResumeBase(BaseModel):
     filename: str
     content: str
@@ -34,6 +35,10 @@ class UserBase(BaseModel):
     email: str
     role: str  # "recruiter" or "applicant"
 
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str
+
 class UserCreate(UserBase):
     password: str
 
@@ -47,7 +52,17 @@ class User(UserBase):
 class Token(BaseModel):
     access_token: str
     token_type: str
-
+    role: str  # <-- Add this field
 class TokenData(BaseModel):
     email: Optional[str] = None
     role: Optional[str] = None
+class UserUpdate(BaseModel):
+    email: Optional[EmailStr] = None
+    current_password: Optional[str] = None
+    new_password: Optional[str] = None
+    profile_picture: Optional[UploadFile] = None
+
+class UserProfile(UserBase):
+    profile_picture: Optional[str] = None
+    class Config:
+        from_attributes = True

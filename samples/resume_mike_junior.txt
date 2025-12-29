@@ -1,0 +1,62 @@
+MIKE CHEN
+Junior Software Developer
+
+Email: mike.chen@email.com
+Phone: (555) 456-7890
+Location: Austin, TX
+GitHub: github.com/mikechen
+
+OBJECTIVE
+Motivated junior developer seeking an opportunity to grow and contribute to a dynamic engineering team. Eager to apply my programming skills and learn new technologies.
+
+TECHNICAL SKILLS
+Languages: Python, JavaScript, HTML, CSS
+Frameworks: React (learning), Node.js (basic)
+Databases: MySQL, SQLite
+Tools: Git, VS Code, Linux
+Other: REST API, Agile basics
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of Texas at Austin | 2024
+GPA: 3.5/4.0
+
+PROJECTS
+
+Personal Portfolio Website | 2024
+- Built a responsive portfolio using HTML, CSS, and JavaScript
+- Deployed on GitHub Pages
+- Integrated contact form functionality
+
+Task Management App | 2023
+- Created a simple task manager using Python and SQLite
+- Implemented CRUD operations
+- Added user authentication
+
+Weather Dashboard | 2023
+- Developed a weather app consuming REST API
+- Used JavaScript to fetch and display data
+- Responsive design for mobile devices
+
+INTERNSHIP EXPERIENCE
+
+Software Development Intern | LocalTech Solutions | Summer 2023
+- Assisted senior developers with Python scripts
+- Wrote unit tests for existing codebase
+- Participated in daily standup meetings
+- Fixed bugs in JavaScript frontend
+
+COURSEWORK
+- Data Structures and Algorithms
+- Web Development
+- Database Systems
+- Software Engineering
+- Operating Systems
+
+ACTIVITIES
+- Computer Science Club Member
+- Hackathon Participant (3 events)
+- Teaching Assistant for Intro to Programming
+
+REFERENCES
+Available upon request

@@ -1,0 +1,54 @@
+JOHN SMITH
+Full Stack Software Engineer
+
+Email: john.smith@email.com
+Phone: (555) 123-4567
+Location: San Francisco, CA
+LinkedIn: linkedin.com/in/johnsmith
+GitHub: github.com/johnsmith
+
+PROFESSIONAL SUMMARY
+Experienced Full Stack Software Engineer with 6+ years of experience building scalable web applications. Proficient in Python, JavaScript, React, and cloud technologies. Passionate about clean code and best practices.
+
+TECHNICAL SKILLS
+Programming Languages: Python, JavaScript, TypeScript, Java, SQL
+Frontend: React, Angular, Vue, HTML5, CSS3, Tailwind CSS
+Backend: Node.js, FastAPI, Django, Express, REST API
+Databases: PostgreSQL, MySQL, MongoDB, Redis
+Cloud & DevOps: AWS, Docker, Kubernetes, Jenkins, CI/CD, Git, GitHub
+Other: Agile, Scrum, TDD, Microservices, Linux
+
+WORK EXPERIENCE
+
+Senior Software Engineer | TechStartup Inc. | 2021 - Present
+- Developed a microservices architecture using Python and FastAPI, improving system performance by 40%
+- Built responsive React frontend serving 100,000+ daily active users
+- Implemented Docker and Kubernetes for containerized deployments
+- Led a team of 4 developers using Agile methodology
+- Designed REST APIs consumed by mobile and web applications
+
+Software Engineer | WebSolutions Corp | 2018 - 2021
+- Created full-stack applications using React, Node.js, and PostgreSQL
+- Migrated legacy systems to AWS cloud infrastructure
+- Reduced deployment time by 60% through CI/CD pipeline implementation
+- Collaborated with product team to define technical requirements
+
+Junior Developer | CodeFactory | 2017 - 2018
+- Developed features using JavaScript and Python
+- Wrote unit tests achieving 85% code coverage
+- Participated in code reviews and documentation
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of California, Berkeley | 2017
+GPA: 3.7/4.0
+
+CERTIFICATIONS
+- AWS Certified Solutions Architect
+- Docker Certified Associate
+- Scrum Master Certified
+
+PROJECTS
+- Open source contributor to React ecosystem
+- Built a personal portfolio using Next.js and Tailwind CSS
+- Created a Python automation tool with 500+ GitHub stars

@@ -1,0 +1,47 @@
+Data Scientist - AI/ML Team
+
+Company: DataDriven Inc.
+Location: New York, NY
+Employment Type: Full-time
+
+About Us:
+DataDriven Inc. is a leading analytics company helping businesses make data-driven decisions. We're looking for a passionate Data Scientist to join our AI/ML team.
+
+Required Skills:
+- Python programming (strong proficiency)
+- Machine Learning and Deep Learning
+- TensorFlow or PyTorch
+- Pandas, NumPy, Scikit-learn
+- SQL and database querying
+- Data visualization
+- Statistics and probability
+- NLP (Natural Language Processing)
+
+Nice to Have:
+- Computer Vision experience
+- R programming
+- Spark/Big Data technologies
+- AWS SageMaker or Azure ML
+- PhD in related field
+
+Responsibilities:
+- Develop and deploy machine learning models
+- Analyze large datasets to extract insights
+- Build predictive analytics solutions
+- Present findings to stakeholders
+- Collaborate with engineering teams
+
+Qualifications:
+- Master's or PhD in Data Science, Statistics, Computer Science, or related field
+- 3+ years of experience in data science
+- Published research is a plus
+- Strong mathematical foundation
+
+Compensation:
+- Salary: $130,000 - $180,000
+- Annual bonus
+- Stock options
+- Conference attendance budget
+- Learning and development allowance
+
+Apply Now: Send your resume and portfolio.

@@ -1,6 +1,22 @@
-# database.py
-from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+from dotenv import load_dotenv
+import os
+
+# Load environment variables
+load_dotenv()
+
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost/resume_screener")
+
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+# Note: Base is defined in models.py to avoid circular imports
 
 def get_db():
-    # Your database session implementation
-    pass
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

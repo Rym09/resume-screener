@@ -29,9 +29,9 @@ class Resume(Base):
     skills = Column(Text)
     experience = Column(Text)
     education = Column(Text)
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
 
-    user = relationship("User", back_populates="resumes")
+    user = relationship("User")
 
 
 class JobDescription(Base):
@@ -51,41 +51,8 @@ class User(Base):
     hashed_password = Column(String)
     role = Column(String)  # "recruiter" or "applicant"
     is_active = Column(Boolean, default=True)
-    profile_picture = Column(String)  # Add this line
-    
-    resumes = relationship("Resume", back_populates="user")
+    profile_picture = Column(String, nullable=True)  # Stores the relative path    
     job_descriptions = relationship("JobDescription", back_populates="user")
-    applications = relationship("Application", back_populates="user")
-    sessions = relationship("Session", back_populates="user", cascade="all, delete-orphan")
-
-
-class Application(Base):
-    __tablename__ = "applications"
-    id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    job_id = Column(Integer, ForeignKey("job_descriptions.id"), nullable=False)
-    resume_id = Column(Integer, ForeignKey("resumes.id"), nullable=False)
-    status = Column(String, default="pending")  # pending, reviewed, accepted, rejected
-    applied_date = Column(DateTime, default=datetime.utcnow)
-    
-    user = relationship("User", back_populates="applications")
-    job = relationship("JobDescription")
-    resume = relationship("Resume")
-
-
-class Session(Base):
-    __tablename__ = "sessions"
-    id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    token = Column(String, unique=True, index=True, nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    expires_at = Column(DateTime, nullable=False)
-    is_active = Column(Boolean, default=True)
-    device_info = Column(String, nullable=True)  # Optional: browser/device info
-    ip_address = Column(String, nullable=True)  # Optional: IP address
-    
-    user = relationship("User", back_populates="sessions")
-
 
 # Create tables
 Base.metadata.create_all(bind=engine)

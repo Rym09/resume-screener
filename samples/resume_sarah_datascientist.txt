@@ -1,0 +1,60 @@
+SARAH JOHNSON
+Data Scientist & Machine Learning Engineer
+
+Email: sarah.johnson@email.com
+Phone: (555) 987-6543
+Location: New York, NY
+LinkedIn: linkedin.com/in/sarahjohnson
+
+PROFESSIONAL SUMMARY
+Data Scientist with 4+ years of experience in machine learning, deep learning, and statistical analysis. Expertise in developing predictive models and extracting actionable insights from complex datasets. Strong background in NLP and computer vision.
+
+TECHNICAL SKILLS
+Programming: Python, R, SQL, Scala
+ML/DL Frameworks: TensorFlow, PyTorch, Scikit-learn, Keras
+Data Processing: Pandas, NumPy, Spark, Dask
+Visualization: Matplotlib, Seaborn, Tableau, Power BI
+Cloud/MLOps: AWS SageMaker, Azure ML, Docker, MLflow
+NLP: BERT, GPT, Transformers, spaCy, NLTK
+Databases: PostgreSQL, MongoDB, Elasticsearch
+
+WORK EXPERIENCE
+
+Senior Data Scientist | AI Innovations Ltd | 2022 - Present
+- Developed NLP models achieving 92% accuracy in sentiment analysis
+- Built recommendation systems increasing user engagement by 35%
+- Deployed machine learning models to production using AWS SageMaker
+- Led research on transformer architectures for text classification
+
+Data Scientist | Analytics Corp | 2020 - 2022
+- Created predictive models for customer churn reducing attrition by 25%
+- Implemented deep learning solutions for image classification
+- Performed statistical analysis on large-scale datasets (10M+ records)
+- Collaborated with engineering to deploy models via REST APIs
+
+Junior Data Analyst | DataFirst Inc | 2019 - 2020
+- Analyzed business data using Python and SQL
+- Built dashboards in Tableau for executive reporting
+- Automated data pipelines saving 20 hours per week
+
+EDUCATION
+Master of Science in Data Science
+Columbia University | 2019
+
+Bachelor of Science in Statistics
+New York University | 2017
+Magna Cum Laude
+
+CERTIFICATIONS
+- TensorFlow Developer Certificate
+- AWS Machine Learning Specialty
+- Deep Learning Specialization (Coursera)
+
+PUBLICATIONS
+- "Efficient Transformer Models for NLP" - IEEE Conference 2023
+- "Predictive Analytics in Healthcare" - Journal of Data Science 2022
+
+PROJECTS
+- Computer Vision model for medical image diagnosis (95% accuracy)
+- Kaggle competition Top 5% finish in NLP challenge
+- Open source NLP toolkit with 1000+ GitHub stars
